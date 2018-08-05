@@ -70,11 +70,7 @@ export class HomeComponent implements OnInit {
   }
 
   updatePage(title: string, body: string, date: string) {
-    console.log('this is running');
-    console.log(date);
-    console.log(typeof date);
     this.api.editPage(title, body, date).subscribe((updatedPage: Day[]) => {
-      console.log(updatedPage);
       if (updatedPage.length > 0) {
         alert('Page was updated');
         this.title = updatedPage[1].title;
