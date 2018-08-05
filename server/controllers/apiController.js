@@ -18,7 +18,6 @@ const apiController = {
     try {
       const date = new Date();
       const today = date.yyyymmdd();
-      console.log(today);
       const results = await db.Post.findAll({ where: { date: today } });
       res.send(results);
     } catch (error) {
@@ -75,6 +74,7 @@ const apiController = {
       res.send(updatedPage);
     } catch (error) {
       console.log('Error with editPage', error);
+      return;
     }
   },
   searchKeyword: async (req, res) => {
@@ -86,12 +86,12 @@ const apiController = {
           [Op.or]: [
             {
               title: {
-                [Op.like]: `${keyword}`
+                [Op.like]: `%${keyword}%`
               }
             },
             {
               body: {
-                [Op.like]: `${keyword}`
+                [Op.like]: `%${keyword}%`
               }
             }
           ]
