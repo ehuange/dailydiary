@@ -8,7 +8,6 @@
 .page-container {
   width: 70%;
   border: 1px solid black;
-  padding-bottom: 5%;
   margin-left: 5%;
 }
 
@@ -25,4 +24,69 @@
   .search-container {
     text-align: center;
   }
+  .container {
+    flex-direction: column-reverse;
+  }
+  .page-container, 
+  .calendar-container {
+    width: auto;
+  }
+  .calendar-container {
+    margin-bottom: 1em;
+  }
+}
+
+.btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.search-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.search-btn:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.action-btn-container {
+  text-align: right;
+  margin-top: 2em;
+  padding-right: 1em;
+}
+
+.btn-create {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  padding: 1em;
+}
+
+.btn-create:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.btn-edit {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  padding: 1em;
+}
+
+.btn-edit:hover {
+  background-color: #4CAF50;
+  color: white;
 }

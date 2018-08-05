@@ -18,7 +18,7 @@ import { ApiService } from './services/api.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     ApiService

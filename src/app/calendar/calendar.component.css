@@ -2,7 +2,7 @@
   display: block;
   width: 210px;
   margin: 0 auto;
-  background-color: beige;
+  background-color: white;
 }
 .calendar * {
   box-sizing: border-box;
@@ -17,11 +17,6 @@
   border: 1px black solid;
 }
 
-.day-names {
-  border: 1px black dashed;
-  
-}
-
 .calendar .month-nav {
   display: flex;
   flex-direction: row;
@@ -34,6 +29,7 @@
   justify-content: space-between;
   font-family: "Montserrat";
 }
+
 .calendar .month-grid .day-names {
   display: flex;
   flex-direction: row;
@@ -94,16 +90,17 @@
   background-color: teal;
 }
 .calendar .month-grid .week-date.disabled {
-  color: light-blue-grey;
+  background-color: lightgray;
+  color: white;
 }
 .calendar .month-grid .today {
   font-weight: bold;
 }
 
 .btn {
-  background-color: #4CAF50;
+  background-color: white;
   border: none;
-  color: white;
+  color: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -112,4 +109,14 @@
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+
+.span-text {
+  color: white;
+  line-height: 2em;
+}
+
+.day-names {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }

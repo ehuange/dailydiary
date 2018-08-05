@@ -1,6 +1,7 @@
 # Dailydiary
 
 ## How to run
+* This app uses PostgreSQL for DB storage. Please make sure you have an instance running.
 npm run server-dev (start api server)
 ng serve (serve static files through angular)
 
@@ -22,7 +23,7 @@ Design and implement a daily diary application
    - No ranking is required. Please just list out all documents where we can find matched word(s) either in title or body or in both
 
 ## Other requirements
-* Use JDK 8+
+* Use JDK 8+ (rebuilt backend using NodeJS)
 * Spring Boot (Skeleton code with minimal rest controller already provided)
 * Responsive design
 * AngularJS 2+ 

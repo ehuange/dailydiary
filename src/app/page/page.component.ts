@@ -31,37 +31,18 @@ export class PageComponent implements OnInit {
     })
   }
 
-  createPage(title: string, body: string, date: string) {
-    this.api.createPage(title, body, date).subscribe((createdPage: Day[]) => {
-      if (createdPage.length > 0) {
-        this.title = createdPage[0].title;
-        this.body = createdPage[0].body;
-        this.date = createdPage[0].date
-      }
-      this.create = false;
-      alert('Page has been saved');
-    })
-  }
-
-  toggleCreate() {
-    this.create = !this.create;
-  }
-
-  updatePage(title: string, body: string, date: string) {
-    this.api.editPage(title, body, date).subscribe((updatedPage: Day[]) => {
-      if (updatedPage.length > 0) {
-        alert('Page was updated');
-        this.title = updatedPage[1].title;
-        this.body = updatedPage[1].body;
-        this.date = updatedPage[1].date;
-        this.edit = false;
+  selectPost(date:string) {
+    this.api.getSpecificPage(date).subscribe((selectedPage: Day[]) => {
+      if (selectedPage.length > 0) {
+        this.searchResults = null;
+        this.title = selectedPage[0].title;
+        this.body = selectedPage[0].body;
+        this.date = selectedPage[0].date;
+        return;
+      } else {
         return;
       }
     })
-  }
-
-  toggleEdit(){
-    this.edit = !this.edit;
   }
 
 }

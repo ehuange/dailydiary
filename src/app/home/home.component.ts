@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
     this.api.getSpecificPage(JSON.stringify($event.mDate._d).slice(1, 11)).subscribe((specificDate: Day[]) => {
       if (specificDate.length === 0) {
         alert('No results for that date, try another!');
+        this.searchResults = null;
         this.edit = false;
         this.create = false;
         this.search = false;
@@ -50,5 +51,42 @@ export class HomeComponent implements OnInit {
       this.body = specificDate[0].body;
       this.date = specificDate[0].date;
     });
-  } 
+  }
+
+  createPage(title: string, body: string, date: string) {
+    this.api.createPage(title, body, date).subscribe((createdPage: Day[]) => {
+      if (createdPage.length > 0) {
+        this.title = createdPage[0].title;
+        this.body = createdPage[0].body;
+        this.date = createdPage[0].date
+      }
+      this.create = false;
+      alert('Page has been saved');
+    })
+  }
+
+  toggleCreate() {
+    this.create = !this.create;
+  }
+
+  updatePage(title: string, body: string, date: string) {
+    console.log('this is running');
+    console.log(date);
+    console.log(typeof date);
+    this.api.editPage(title, body, date).subscribe((updatedPage: Day[]) => {
+      console.log(updatedPage);
+      if (updatedPage.length > 0) {
+        alert('Page was updated');
+        this.title = updatedPage[1].title;
+        this.body = updatedPage[1].body;
+        this.date = updatedPage[1].date;
+        this.edit = false;
+        return;
+      }
+    })
+  }
+
+  toggleEdit(){
+    this.edit = !this.edit;
+  }
 }

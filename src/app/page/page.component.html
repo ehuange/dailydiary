@@ -3,7 +3,7 @@
     <div>
       Search results for {{ this.kw }}
     </div>
-    <div *ngFor="let result of searchResults">
+    <div (click)=selectPost(result.date) *ngFor="let result of searchResults">
       {{ result.date }} : {{result.title}}
     </div>
   </div>
@@ -19,40 +19,3 @@
     {{ this.body }}
   </div>
 </div>
-<div class="form-container" *ngIf="create && !edit">
-  <label>
-    Title:
-    <input type="title" id="title" placeholder="Enter title here" #title> <br/>
-  </label>
-  <label>
-    Body:
-    <input type="body" id="body" placeholder="Enter body here" #body> <br/>
-  </label>
-  <label>
-    Date:
-    <input type="date" id="date" placeholder="Select date here" #date> <br/>
-  </label>
-    <button class="btn" (click)="createPage(title.value, body.value, date.value)"> Create post</button>
-</div>
-
-<div class="form-container" *ngIf="edit && !create">
-  {{ this.date }}
-  <br/>
-  <label>
-    Title:
-    <input type="title" id="title" placeholder="Enter title here" #title>
-  </label>
-  <br/>
-  <label>
-    Body:
-    <input type="body" id="body" placeholder="Enter body here" #body> <br/>
-  </label>
-  <br/>
-  <button class="btn" (click)="updatePage(title.value, body.value, this.date)"> Submit </button>
-</div>
-
-<div class="action-btn-container">
-  <button class="btn btn-create" (click)="toggleCreate()">Create</button>
-  <button class="btn btn-edit" (click)="toggleEdit()">Edit</button>
-</div>
-

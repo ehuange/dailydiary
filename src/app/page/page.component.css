@@ -8,7 +8,7 @@
 
 .title-container {
   flex: 1;
-  font-size: 1.3em;
+  font-size: 2em;
 }
 
 .date-container {
@@ -24,11 +24,10 @@
   text-align: left;
   padding-left: 1em;
   position: relative;
-  padding-bottom: 60%;
 }
 
 .action-btn-container {
-  position: absolute;
+  position: fixed;
   padding-right: 2em;
   bottom: 0;
   right: 0;
