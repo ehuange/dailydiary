@@ -1,7 +1,7 @@
 # Dailydiary
 
 ## How to run
-* This app uses PostgreSQL for DB storage. Please make sure you have an instance running.
+* This app requires PostgreSQL for DB storage. Please make sure you have an instance running.
 - npm install
 - npm run server-dev (start api server)
 - ng serve (serve static files through angular)
