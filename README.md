@@ -1,27 +1,48 @@
 # Dailydiary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+## How to run
+npm run server-dev (start api server)
+ng serve (serve static files through angular)
 
-## Development server
+## Accessing the application
+http://localhost:4200 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Design and implement a daily diary application
 
-## Build
+### Design and implement a Single Page Application with following features:
+1. Add or edit today's page
+2. Save page
+3. Access old pages using a calendar widget
+4. Basic search by keywords
+   - The search is based on the whole words found in the search text except “the”, “and”, “or” “is” or similar common words
+   - The search can include texts from title or body of a diary entry
+   - No ranking is required. Please just list out all documents where we can find matched word(s) either in title or body or in both
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Other requirements
+* Use JDK 8+
+* Spring Boot (Skeleton code with minimal rest controller already provided)
+* Responsive design
+* AngularJS 2+ 
+* Good looking UI 
 
-## Running unit tests
+### Rest-API
+* GET /api/v1/pages 
+    - Returns list of daily pages
+* GET /api/pages/2018-01-01 
+    - Return page of that day
+* GET /api/pages/today   
+    - Returns today's page
+* POST /api/pages/      
+    - Creates a page for today. That can be accessed by today's date or using 'today'
+* GET /api/v1/pages?search=keyword 
+    - Returns list of daily pages where match is found
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    
+### Check following locations for mock up
 
-## Running end-to-end tests
+* src/main/resources/static/home.png
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* src/main/resources/static/search.png

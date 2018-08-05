@@ -1,0 +1,16 @@
+<div class="search-container">
+  <label>
+    Search entries:
+    <input type="keyword" id="keyword" placeholder="Search keyword here" #keyword (keyup.enter)="searchKeyword(keyword.value)">
+  </label>
+  <button (click)="searchKeyword(keyword.value)">Search</button>
+</div>
+<hr>
+<div class="container">
+  <div class="page-container">
+    <app-page [search]="search" [searchResults]="searchResults" [kw]="kw" [title]="title" [body]="body" [date]="date" [edit]="edit" [create]="create"></app-page>
+  </div>
+  <div class="calendar-container">
+    <app-calendar (onSelectDate)="onSelectDate($event)"></app-calendar>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  word-wrap: break-word;
+}
+
+.page-container {
+  width: 70%;
+  border: 1px solid black;
+  padding-bottom: 5%;
+  margin-left: 5%;
+}
+
+.calendar-container {
+  text-align: center;
+  width: 30%;
+}
+
+.search-container {
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-container {
+    text-align: center;
+  }
+}
