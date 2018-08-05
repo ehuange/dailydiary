@@ -2,8 +2,8 @@
 
 ## How to run
 * This app uses PostgreSQL for DB storage. Please make sure you have an instance running.
-npm run server-dev (start api server)
-ng serve (serve static files through angular)
+- npm run server-dev (start api server)
+- ng serve (serve static files through angular)
 
 ## Accessing the application
 http://localhost:4200 
