@@ -2,6 +2,7 @@
 
 ## How to run
 * This app requires PostgreSQL for DB storage. Please make sure you have an instance running.
+* Make sure to configure env variables for DB_USER and DB_HOST to run PostgreSQL connection successfully.
 - npm install
 - npm run server-dev (start api server)
 - ng serve (serve static files through angular)
