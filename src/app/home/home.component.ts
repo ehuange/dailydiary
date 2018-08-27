@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
         this.searchResults = null;
         this.search = false;
         alert('No results for that query');
-        return;
       }
     })
   } 
@@ -45,7 +44,6 @@ export class HomeComponent implements OnInit {
         this.edit = false;
         this.create = false;
         this.search = false;
-        return;
       }
       this.title = specificDate[0].title;
       this.body = specificDate[0].body;
@@ -77,7 +75,6 @@ export class HomeComponent implements OnInit {
         this.body = updatedPage[1].body;
         this.date = updatedPage[1].date;
         this.edit = false;
-        return;
       }
     })
   }
