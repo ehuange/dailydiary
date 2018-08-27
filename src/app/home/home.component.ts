@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchKeyword(keyword: string) {
+  searchKeyword(keyword: string): void {
     this.api.getKeywordPage(keyword).subscribe((keywordResults: Day[]) => {
       if (keywordResults.length > 0) {
         this.searchResults = keywordResults;
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     })
   } 
 
-  onSelectDate($event) {
+  onSelectDate($event): void {
     this.api.getSpecificPage(JSON.stringify($event.mDate._d).slice(1, 11)).subscribe((specificDate: Day[]) => {
       if (specificDate.length === 0) {
         alert('No results for that date, try another!');
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  createPage(title: string, body: string, date: string) {
+  createPage(title: string, body: string, date: string): void {
     this.api.createPage(title, body, date).subscribe((createdPage: Day[]) => {
       if (createdPage.length > 0) {
         this.title = createdPage[0].title;
@@ -65,11 +65,11 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  toggleCreate() {
+  toggleCreate(): void {
     this.create = !this.create;
   }
 
-  updatePage(title: string, body: string, date: string) {
+  updatePage(title: string, body: string, date: string): void {
     this.api.editPage(title, body, date).subscribe((updatedPage: Day[]) => {
       if (updatedPage.length > 0) {
         alert('Page was updated');
@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  toggleEdit(){
+  toggleEdit(): void {
     this.edit = !this.edit;
   }
 }
