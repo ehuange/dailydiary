@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
         this.search = false;
         alert('No results for that query');
       }
-    })
-  } 
+    });
+  }
 
   onSelectDate($event): void {
     this.api.getSpecificPage(JSON.stringify($event.mDate._d).slice(1, 11)).subscribe((specificDate: Day[]) => {
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
       }
       this.create = false;
       alert('Page has been saved');
-    })
+    });
   }
 
   toggleCreate(): void {
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
         this.date = updatedPage[1].date;
         this.edit = false;
       }
-    })
+    });
   }
 
   toggleEdit(): void {
