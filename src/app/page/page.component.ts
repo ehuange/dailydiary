@@ -31,16 +31,13 @@ export class PageComponent implements OnInit {
     })
   }
 
-  selectPost(date:string) {
+  selectPost(date: string): void {
     this.api.getSpecificPage(date).subscribe((selectedPage: Day[]) => {
       if (selectedPage.length > 0) {
         this.searchResults = null;
         this.title = selectedPage[0].title;
         this.body = selectedPage[0].body;
         this.date = selectedPage[0].date;
-        return;
-      } else {
-        return;
       }
     })
   }
