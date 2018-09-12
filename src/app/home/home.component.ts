@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onSelectDate($event): void {
+  onSelectDate($event): {
     this.api.getSpecificPage(JSON.stringify($event.mDate._d).slice(1, 11)).subscribe((specificDate: Day[]) => {
       if (specificDate.length === 0) {
         alert('No results for that date, try another!');
