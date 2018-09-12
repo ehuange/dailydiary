@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  createPage(title: string, body: string, date: string): {
+  createPage(title: string, body: string, date: string): void {
     this.api.createPage(title, body, date).subscribe((createdPage: Day[]) => {
       if (createdPage.length > 0) {
         this.title = createdPage[0].title;
