@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchKeyword(keyword: string): void {
+  searchKeyword(keyword: string): {
     this.api.getKeywordPage(keyword).subscribe((keywordResults: Day[]) => {
       if (keywordResults.length > 0) {
         this.searchResults = keywordResults;
